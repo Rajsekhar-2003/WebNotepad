@@ -1,0 +1,29 @@
+{
+  "name": "webnotepad",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Web Notepad - free online notepad and text editor. No login, autosave, find & replace, share by QR and 6-digit code.",
+  "scripts": {
+    "dev": "concurrently -k -n web,api \"vite\" \"node server/index.js\"",
+    "seo": "node scripts/seo.mjs",
+    "build": "node scripts/seo.mjs && vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "start": "node server/index.js",
+    "preview": "node server/index.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.5",
+    "express": "^4.21.2",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.2.5",
+    "vite": "^5.4.11"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
