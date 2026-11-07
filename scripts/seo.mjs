@@ -14,7 +14,7 @@ function readEnvFile() {
   }
 }
 
-const siteUrl = (process.env.VITE_SITE_URL || readEnvFile() || 'https://webnotepad.com').replace(/\/+$/, '');
+const siteUrl = (process.env.VITE_SITE_URL || readEnvFile() || 'https://webnotepad.online').replace(/\/+$/, '');
 const today = new Date().toISOString().slice(0, 10);
 
 fs.writeFileSync(
